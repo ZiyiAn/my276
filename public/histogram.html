@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Histogram Generator</title>
+	<link rel="stylesheet" href="histogram.css">
+	<script src="calculate.js"></script>
+</head>
+<body>
+
+	<h1>Histogram Generator</h1>
+
+	<div id='Lower_bounds'>
+		<h2 id= 'LowerB'>Lower bounds</h2>
+		<ul style='list-style: none' id='leftLi'>
+			<li>Max<input type='number' min='0.00' value='100.00'onkeyup="computeHist()" onclick="computeHist()"></li> <!-- maxlength="5" -->
+			<li>A+ <input type='number' min='0.00' value='95.00' onkeyup="computeHist()" onclick="computeHist()"></li>
+			<li>A  <input type='number' min='0.00' value='90.00' onkeyup="computeHist()" onclick="computeHist()"></li>
+			<li>A- <input type='number' min='0.00' value='85.00' onkeyup="computeHist()" onclick="computeHist()"></li>
+			<li>B+ <input type='number' min='0.00' value='80.00' onkeyup="computeHist()" onclick="computeHist()"></li>
+			<li>B  <input type='number' min='0.00' value='75.00' onkeyup="computeHist()" onclick="computeHist()"></li>
+			<li>B- <input type='number' min='0.00' value='70.00' onkeyup="computeHist()" onclick="computeHist()"></li>
+			<li>C+ <input type='number' min='0.00' value='65.00' onkeyup="computeHist()" onclick="computeHist()"></li>
+			<li>C  <input type='number' min='0.00' value='60.00' onkeyup="computeHist()" onclick="computeHist()"></li>
+			<li>C- <input type='number' min='0.00' value='55.00' onkeyup="computeHist()" onclick="computeHist()"></li>
+			<li>D  <input type='number' min='0.00' value='50.00' onkeyup="computeHist()" onclick="computeHist()"></li>
+			<li>F  <input type='number' min='0.00' value='0.00'  onkeyup="computeHist()" onclick="computeHist()"></li>
+		</ul>
+	</div>
+
+	<div id='Histogram'>
+		<h2 id= 'Hist'>Histogram</h2>
+		<ul style='list-style: none' id='rightLi'>
+			<li>A+ </li><p name='display'><br></p>
+			<li>A  </li><p name='display'><br></p>
+			<li>A- </li><p name='display'><br></p>
+			<li>B+ </li><p name='display'><br></p>
+			<li>B  </li><p name='display'><br></p>
+			<li>B- </li><p name='display'><br></p>
+			<li>C+ </li><p name='display'><br></p>
+			<li>C  </li><p name='display'><br></p>
+			<li>C- </li><p name='display'><br></p>
+			<li>D  </li><p name='display'><br></p>
+			<li>F  </li><p name='display'><br></p>
+		</ul>
+	</div>
+
+</body>
+</html>
