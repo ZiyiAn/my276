@@ -16,7 +16,7 @@ express()
   .get('/db', async (req, res) => {
     try {
       const client = await pool.connect()
-      const result = await client.query('SELECT * FROM Students');
+      const result = await client.query('SELECT * FROM Student');
       const results = { 'results': (result) ? result.rows : null};
       res.render('pages/db', results );
       client.release();
