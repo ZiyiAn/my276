@@ -25,4 +25,23 @@ express()
       res.send("Error " + err);
     }
   })
+  .get('/insert', async (req,res)=>{
+    try{
+      const client = await pool.connect()
+      var query = "insert into students (name, weight, height, color, gpa) values ($1,$2,$3,$4,$5)";
+      var info = [req.query.name, req.query.weight, req.query.height, req.query.color, req.query.gpa];
+      await client.query(query, info, function(err){
+        if (err)
+          res.send("Error " + err);
+        else {
+          client.release();
+          console.log("inserted!!!")
+          res.redirect('/');     // maybe comment this line?
+        }
+      })
+    } catch (err){
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
