@@ -3,14 +3,15 @@
 
 
 function validInsert(){
-	var warning = document.getElementById("warning");
-	var data = document.getElementById("form");
-	var name = data[0].value
-	var weight = parseFloat(data[1].value)
-	var height = parseFloat(data[2].value)
-	var color = data[3].value
-	var gpa = parseFloat(data[4].value)
-	var speed = parseFloat(data[5].value)
+	var message1 = document.getElementById("message1");
+	var message2 = document.getElementById("message2");
+	var data1 = document.getElementById("form1");
+	var name = data1[0].value
+	var gender = data1[1].checked?"M":data1[2].checked?"F":"O"
+	var weight = parseFloat(data1[4].value)
+	var height = parseFloat(data1[5].value)
+	var color = data1[6].value
+	var gpa = parseFloat(data1[7].value)
 
 
 	message = ""
@@ -30,16 +31,13 @@ function validInsert(){
 	if (isNaN(gpa)||gpa<0)
 		message += " gpa "
 
-	if (isNaN(speed)||speed<0)
-		message += " speed "
-	
 	if (message!=""){
-		warning.innerHTML = "Invalid Input From " + message;
+		message1.innerHTML = "Invalid Input From" + message;
 		return false
 	}
 		
 	else{
-		warning.innerHTML = "";
+		message1.innerHTML = "Please fill out the student's info to insert";
 		return true
 	}
 }

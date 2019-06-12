@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 5000
 const { Pool } = require('pg');
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL
-  //ssl: true,
+  ssl: true,
 
 });
 
@@ -22,7 +22,7 @@ express()
       client.release();
     } catch (err) {
       console.error(err);
-      res.send("Error " + err);
+      res.send("DB connection error: " + err);
     }
   })
   .get('/insert', async (req,res)=>{
@@ -32,16 +32,38 @@ express()
       var info = [req.query.name, req.query.weight, req.query.height, req.query.color, req.query.gpa];
       await client.query(query, info, function(err){
         if (err)
-          res.send("Error " + err);
+          res.send("Query error " + err);
         else {
           client.release();
-          console.log("inserted!!!")
-          res.redirect('/');     // maybe comment this line?
+          console.log("insert succeed")
+          //a time delay?
+          res.redirect('/students.html');   
         }
       })
     } catch (err){
       console.error(err);
-      res.send("Error " + err);
+      res.send("DB connection error: " + err);
+    }
+  })
+
+  .get('/search', async (req,res)=>{
+    try{
+      const client = await pool.connect()
+      var query = "insert into students (name, weight, height, color, gpa) values ($1,$2,$3,$4,$5)";
+      var info = [req.query.name, req.query.weight, req.query.height, req.query.color, req.query.gpa];
+      await client.query(query, info, function(err){
+        if (err)
+          res.send("Query error " + err);
+        else {
+          client.release();
+          console.log("student found")
+          //a time delay?
+          res.redirect('/students.html');   
+        }
+      })
+    } catch (err){
+      console.error(err);
+      res.send("DB connection error: " + err);
     }
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
