@@ -28,8 +28,8 @@ express()
   .get('/insert', async (req,res)=>{
     try{
       const client = await pool.connect()
-      var query = "insert into students (name, weight, height, color, gpa) values ($1,$2,$3,$4,$5)";
-      var info = [req.query.name, req.query.weight, req.query.height, req.query.color, req.query.gpa];
+      var query = "insert into student (name, gender, weight, height, color, gpa) values ($1,$2,$3,$4,$5,$6)";
+      var info = [req.query.name, req.query.gender, req.query.weight, req.query.height, req.query.color, req.query.gpa];
       await client.query(query, info, function(err){
         if (err)
           res.send("Query error " + err);
@@ -66,5 +66,5 @@ express()
   //     res.send("DB connection error: " + err);
   //   }
   // })
-  
+
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
