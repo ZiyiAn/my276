@@ -32,12 +32,14 @@ function validInsert(){
 		message += " gpa "
 
 	if (message!=""){
-		message1.innerHTML = "Invalid Input From" + message;
+		message1.innerHTML = message + "invalid"
+		message1.style.color = "#ff0000"
 		return false
 	}
 		
 	else{
-		message1.innerHTML = "Please fill out the student's info to insert";
+		message1.innerHTML = "Please fill out the student's info to insert"
+		message1.style.color = "#000000"
 		return true
 	}
 }
