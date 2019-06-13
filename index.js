@@ -31,11 +31,12 @@ express()
       var query = "insert into student (name, gender, weight, height, haircolor, gpa) values ($1,$2,$3,$4,$5,$6)";
       var info = [req.query.name, req.query.gender, req.query.weight, req.query.height, req.query.color, req.query.gpa];
       await client.query(query, info, function(err){
-        if (err)
+        if (err){
           res.send("Query error: " + err + "\nBack to home page in 3 seconds...");
       	  setTimeout(function() {
 			  res.redirect('/students')
 		  }, 3000);
+      	}
         else {
           client.release();
           console.log("insert succeed")
