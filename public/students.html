@@ -8,7 +8,7 @@
 <body>
 	<div id = "background"></div>
 	<div id = "home"><a href="students.html">Home</a></div>
-	<div id = "database"><a href="display_students.html">Display</a></div>
+	<!-- <div id = "database"><a href="display_students.html">Display</a></div> -->
 	<div id = "readme"><a href="readme.html">ReadMe</a></div>
 
 
@@ -34,7 +34,7 @@
 		<input type="submit" name ="Insert" id = "Insert" value = "Insert">
 	</form>
 
-	<form id = "form2" action="search" >
+	<form id = "form2" action="search" onsubmit="return validSearch()">
 		<p id = "message2">Please enter the student's name to search/edit/delete</p>
 		name:
 		<input type="text" name="name_search" class = "text">

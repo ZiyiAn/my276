@@ -8,13 +8,15 @@
   <body>
   	<div id = "background"></div>
   	<div id = "home"><a href="students.html">Home</a></div>
-  	<div id = "database"><a href="display_students.html">Display</a></div>
+  	<!-- <div id = "database"><a href="display_students.html">Display</a></div> -->
   	<div id = "readme"><a href="public/readme.html">ReadMe</a></div>
 
 
     <% var gender=s.rows[0].gender %>
-  	<form id = "form1" action="\update" >
-  		<p id = "message1">Please fill out the student's info to update, or delete</p>
+  	<form id = "form1" action="edit" onsubmit="return validInsert()">
+  		<p id = "message1" >Please fill out the student's info to update, or delete</p>
+      Student 
+      <input type="text" name="name_old" class="text" readonly value= <%= s.rows[0].name %> ><br>
   		name:
   		<input type="text" name="name" class="text" value= <%= s.rows[0].name %>><br>
   		gender:

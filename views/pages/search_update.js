@@ -2,7 +2,7 @@
 
 
 
-function validInsert(){
+function validInput(){
 	var message1 = document.getElementById("message1");
 	var message2 = document.getElementById("message2");
 	var data1 = document.getElementById("form1");
