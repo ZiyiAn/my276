@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Assn2</title>
+	<title>students</title>
 	<link rel="stylesheet" href = "students.css">
 	<script src="stuDB.js"></script>
 </head>
 <body>
 	<div id = "background"></div>
 	<div id = "home"><a href="students.html">Home</a></div>
-	<div id = "database"><a href="database.html">Students</a></div>
+	<div id = "database"><a href="display_students.html">Display</a></div>
 	<div id = "readme"><a href="readme.html">ReadMe</a></div>
 
 
@@ -19,8 +19,8 @@
 		name:
 		<input type="text" name="name" class="text"><br>
 		gender:
-		<input type="radio" name="gender" value="M"> Male
-  		<input type="radio" name="gender" value="F"> Female
+		<input type="radio" name="gender" value="M" > Male
+  		<input type="radio" name="gender" value="F" > Female
   		<input type="radio" name="gender" value="O" checked> Other<br>
 		weight:
 		<input type="number" name="weight" class = "number" value=100><br>
@@ -30,19 +30,17 @@
 		<input type="color" name="color" value="#000000"><br>
 		gpa:
 		<input type="number" name="gpa" class="number" value=2.00 step="0.01" ><br>
-		
+
 		<input type="submit" name ="Insert" id = "Insert" value = "Insert">
-		<!-- <span id = "warning"></span> -->
 	</form>
 
 	<form id = "form2" action="\search" >
-		<p id = "message2">Please enter the student's name to search</p>
+		<p id = "message2">Please enter the student's name to search/edit/delete</p>
 		name:
-		<input type="text" name="name" class = "text">
-		
+		<input type="text" name="name_search" class = "text">
+
 		<br>
 		<input type="submit" name ="Search" id = "Search" value = "Search">
-		<!-- <span id = "warning"></span> -->
 	</form>
 
 </body>
