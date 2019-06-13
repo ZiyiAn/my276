@@ -28,7 +28,7 @@ express()
   .get('/insert', async (req,res)=>{
     try{
       const client = await pool.connect()
-      var query = "insert into student (name, gender, weight, height, color, gpa) values ($1,$2,$3,$4,$5,$6)";
+      var query = "insert into student (name, gender, weight, height, haircolor, gpa) values ($1,$2,$3,$4,$5,$6)";
       var info = [req.query.name, req.query.gender, req.query.weight, req.query.height, req.query.color, req.query.gpa];
       await client.query(query, info, function(err){
         if (err)
@@ -36,8 +36,10 @@ express()
         else {
           client.release();
           console.log("insert succeed")
+          res.send("insert succeed \nBack to home page...")
+          res.setTimeout(fuction(){res.redirect('/students.html');}, 2000)
           //a time delay?
-          res.redirect('/students.html');   
+             
         }
       })
     } catch (err){
