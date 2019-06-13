@@ -36,10 +36,9 @@ express()
         else {
           client.release();
           console.log("insert succeed")
-          res.send("insert succeed \nBack to home page...")
-          res.setTimeout(fuction(){res.redirect('/students.html');}, 2000)
-          //a time delay?
-             
+          // res.send("insert succeed \nBack to home page...")
+          res.render('/insert_succeed.html')
+          
         }
       })
     } catch (err){
