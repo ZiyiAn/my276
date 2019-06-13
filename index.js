@@ -57,9 +57,9 @@ express()
       const client = await pool.connect()
       var query = "select * from student where name=($1)";
       await client.query(query, [req.query.name_search], function(err,result){
-        if (err){
+        if (err || !result){
           console.log("Query error: " + err );
-          res.render('pages/error',{message:""+err})
+          res.render('pages/error',{message:(err?(""+err):"Name not match")})
         }
         else {
           client.release();
