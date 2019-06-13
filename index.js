@@ -29,8 +29,9 @@ express()
   .get('/insert', async (req,res)=>{
     try{
       const client = await pool.connect()
+      var color = req.query.haircolor?req.query.haircolor:"#000000"
       var query = "insert into student (name, gender, weight, height, haircolor, gpa) values ($1,$2,$3,$4,$5,$6)";
-      var info = [req.query.name, req.query.gender, req.query.weight, req.query.height, req.query.haircolor, req.query.gpa];
+      var info = [req.query.name, req.query.gender, req.query.weight, req.query.height, color, req.query.gpa];
       await client.query(query, info, function(err){
         if (err){
           console.log("Query error: " + err );
