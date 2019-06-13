@@ -13,7 +13,7 @@
 
 
     <% var gender=s.rows[0].gender %>
-  	<form id = "form1" action="edit" onsubmit="return validInsert()">
+  	<form id = "form1" action="edit">
   		<p id = "message1" >Please fill out the student's info to update, or delete</p>
       Student 
       <input type="text" name="name_old" class="text" readonly value= <%= s.rows[0].name %> ><br>
@@ -24,15 +24,15 @@
     		<input type="radio" name="gender" value="F" <% if(gender=='F'){%> checked <% } %>> Female
     		<input type="radio" name="gender" value="O" <% if(gender=='O'){%> checked <% } %>> Other<br>
   		weight:
-  		<input type="number" name="weight" class = "number" value= <%= s.rows[0].weight %>><br>
+  		<input type="number" name="weight" class = "number" min=0.0 value= <%= s.rows[0].weight %>><br>
   		height:
-  		<input type="number" name="height" class = "number" value= <%= s.rows[0].height %>><br>
+  		<input type="number" name="height" class = "number" min=0.0 value= <%= s.rows[0].height %>><br>
   		Hair color:
   		<input type="color" name="haircolor" value= <%= s.rows[0].haircolor %>><br>
   		gpa:
-  		<input type="number" name="gpa" class="number" step="0.01" value= <%= s.rows[0].gpa %>><br>
+  		<input type="number" name="gpa" class="number" min=0.0 step="0.01" value= <%= s.rows[0].gpa %>><br>
 
-  		<input type="submit" name ="Update" id = "Update" value = "Update">
+  		<input type="submit" name ="Update" id ="Update" value = "Update">
       <input type="submit" name="Delete" id="Delete" value="Delete">
   	</form>
 
