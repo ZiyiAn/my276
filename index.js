@@ -32,13 +32,17 @@ express()
       var info = [req.query.name, req.query.gender, req.query.weight, req.query.height, req.query.color, req.query.gpa];
       await client.query(query, info, function(err){
         if (err)
-          res.send("Query error " + err);
+          res.send("Query error: " + err + "\nBack to home page in 3 seconds...");
+      	  setTimeout(function() {
+			  res.redirect('/students')
+		  }, 3000);
         else {
           client.release();
           console.log("insert succeed")
-          // res.send("insert succeed \nBack to home page...")
-          res.render('pages/insert_succeed')
-          
+          res.send("insert succeed \nBack to home page in 3 seconds...")
+          setTimeout(function() {
+			  res.redirect('/students')
+		  }, 3000);
         }
       })
     } catch (err){
