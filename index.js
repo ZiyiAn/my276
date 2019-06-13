@@ -58,9 +58,9 @@ express()
       const client = await pool.connect()
       var query = "select * from student where name=($1)";
       await client.query(query, [req.query.name_search], function(err,result){
-        if (err || (result.rows.name != req.query.name_search)){
+        if (err || (result.rows[0].name != req.query.name_search)){
           if(err)console.log("Query error: " + err );
-          else console.log("name returned: " + result.rows.name + "searched name: " + req.query.name_search);
+          else console.log("name returned: " + result.rows[0].name + "not equel to searched name: " + req.query.name_search);
 
           res.render('pages/error',{message:(err?(""+err):"Name not match")})
         }
@@ -131,7 +131,7 @@ express()
   //     const client = await pool.connect()
   //     var query = "select * from student where name=($1)";
   //     await client.query(query, [req.query.name_search], function(err,result){
-  //       if (err || !(result.rows.name)){
+  //       if (err || !(result.rows[0].name)){
   //         console.log("Query error: " + err );
   //         res.render('pages/error',{message:(err?(""+err):"Name not match")})
   //       }

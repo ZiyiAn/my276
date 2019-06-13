@@ -80,7 +80,7 @@ function validSearch(){
 	}
 		
 	else{
-		message1.innerHTML = "Please fill out the student's info to search"
+		message1.innerHTML = "Please enter the student's name to search/edit/delete"
 		message1.style.color = "#000000"
 		return true
 	}
