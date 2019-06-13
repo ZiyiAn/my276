@@ -59,7 +59,9 @@ express()
       var query = "select * from student where name=($1)";
       await client.query(query, [req.query.name_search], function(err,result){
         if (err || (result.rows.name != req.query.name_search)){
-          console.log("Query error: " + err );
+          if(err)console.log("Query error: " + err );
+          else console.log("name returned: " + result.rows.name + "searched name: " + req.query.name_search);
+
           res.render('pages/error',{message:(err?(""+err):"Name not match")})
         }
         else {
