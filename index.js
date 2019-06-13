@@ -37,7 +37,7 @@ express()
           client.release();
           console.log("insert succeed")
           // res.send("insert succeed \nBack to home page...")
-          res.render('public/insert_succeed')
+          res.render('pages/insert_succeed')
           
         }
       })
