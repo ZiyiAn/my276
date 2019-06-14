@@ -132,13 +132,13 @@ express()
       await client.query(query, [], function(err,result){
         if (err || !(result.rows[0])){
           console.log("Query error: " + err );
-          res.render('pages/error',{message:(err?(""+err):"Name not match")})
+          res.render('pages/error',{message:(err?(""+err):"Unable to display.Table empty?")})
         }
         else {
           client.release();
           console.log("table found")
           // console.log(result.rows)
-          res.render('pages/display_students',{s:result})
+          res.render('pages/search_update',{s:result})
         }
         res.end()
       })
