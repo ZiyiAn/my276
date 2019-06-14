@@ -129,7 +129,7 @@ express()
     try{
       const client = await pool.connect()
       var query = "select * from student";
-      await client.query(query, [], function(err,result){
+      await client.query(query, function(err,result){
         if (err || !(result.rows[0])){
           console.log("Query error: " + err );
           res.render('pages/error',{message:(err?(""+err):"Unable to display.Table empty?")})
