@@ -1,6 +1,6 @@
 div {
 	display: inline-block;
-	font-family: Georgia;
+	font-family: helvetica;
 	font-size: 20px;
 	position: absolute;
 	padding-top: 3px;
@@ -13,7 +13,9 @@ a{
 	color: white;
 	text-decoration: none;
 }
-
+a:hover{
+	scale:1.2;
+}
 #home {
 	top:0px;
 	/*margin-top: 58px;*/
