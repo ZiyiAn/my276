@@ -32,7 +32,7 @@ function validInsert(){
 		message += " gpa "
 
 	if (message!=""){
-		message1.innerHTML = message + "invalid"
+		message1.innerHTML = "<b>"+ message + "invalid</b>"
 		message1.style.color = "#ff0000"
 		return false
 	}
