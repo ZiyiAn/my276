@@ -137,7 +137,8 @@ express()
         else {
           client.release();
           console.log("table found")
-          res.render('pages/display_students',{students:result})
+          console.log(result.rows)
+          // res.render('pages/display_students',{students:result})
         }
         res.end()
       })
