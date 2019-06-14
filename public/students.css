@@ -13,9 +13,6 @@ a{
 	color: white;
 	text-decoration: none;
 }
-/* a:hover{
-	transform: scale(1.2);
-} */
 
 #home {
 	top:0px;
@@ -24,11 +21,6 @@ a{
 
 }
 
-/*#database{
-	top:0px;
-	margin-left: 150px;
-
-}*/
 
 #readme{
 	top:0px;
@@ -49,11 +41,10 @@ a{
 
 #form1{
 	padding: 20px;
-	/*padding-right: 119px;*/
 	position: absolute;
 	margin-top: 50px;
 	margin-left: 50px;
-	background-color:#D8D8D8
+	background-color:#EEEEEE
 }
 #form2{
 	padding: 20px;
@@ -62,16 +53,19 @@ a{
 	position: absolute;
 	margin-top: 400px;
 	margin-left: 50px;
-	background-color:#D8D8D8
+	background-color:#EEEEEE
 }
 #form3{
 	padding: 20px;
 	position: absolute;
 	margin-top: 570px;
 	margin-left: 50px;
-	background-color:#D8D8D8
+	background-color:#EEEEEE
 }
 
+.form:hover{
+	background-color:#D8D8D8
+}
 input{
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -87,10 +81,3 @@ input{
 	width: 50px;
 }
 
-/*.color{
-	height: 20px;
-	width: 100px;
-}*/
-span{
-	color: red;
-}

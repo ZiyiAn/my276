@@ -38,7 +38,7 @@ function validInsert(){
 	}
 		
 	else{
-		message1.innerHTML = "Please fill out the student's info to insert"
+		message1.innerHTML = "<b>Please fill out the student's info to insert</b>"
 		message1.style.color = "#000000"
 		return true
 	}
@@ -74,13 +74,13 @@ function validSearch(){
 	// 	message += " gpa "
 
 	if (message!=""){
-		message1.innerHTML = message + "invalid"
+		message1.innerHTML = "<b>"+ message + "invalid</b>"
 		message1.style.color = "#ff0000"
 		return false
 	}
 		
 	else{
-		message1.innerHTML = "Please enter the student's name to search/edit/delete"
+		message1.innerHTML = "<b>Please enter the student's name to search/edit/delete</b>"
 		message1.style.color = "#000000"
 		return true
 	}

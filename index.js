@@ -128,16 +128,16 @@ express()
   .get('/display', async (req,res)=>{
     try{
       const client = await pool.connect()
-      var query = "select * from student where name=($1)";
-      await client.query(query, [req.query.name_search], function(err,result){
-        if (err || !(result.rows[0].name)){
+      var query = "select * from student";
+      await client.query(query, [], function(err,result){
+        if (err || !(result.rows[0])){
           console.log("Query error: " + err );
           res.render('pages/error',{message:(err?(""+err):"Name not match")})
         }
         else {
           client.release();
-          console.log("student found")
-          res.render('pages/search_update',{s:result})
+          console.log("table found")
+          res.render('pages/display_students',{students:result})
         }
         res.end()
       })

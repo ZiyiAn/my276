@@ -12,7 +12,7 @@
 	<div id = "readme"><a href="readme.html">ReadMe</a></div>
 
 
-	<form id = "form1" action="insert" onsubmit="return validInsert()">
+	<form id = "form1" class="form" action="insert" onsubmit="return validInsert()">
 		<p id = "message1"><b>Please fill out the student's info to insert</b></p>
 		name:
 		<input type="text" name="name" class="number"><br>
@@ -33,7 +33,7 @@
 	</form>
 	<br>
 
-	<form id = "form2" action="search" onsubmit="return validSearch()">
+	<form id = "form2" class="form" action="search" onsubmit="return validSearch()">
 		<p id = "message2" ><b>Please enter the student's name to search/edit/delete</b></p>
 		name:
 		<input type="text" name="name_search" class = "text">
@@ -42,7 +42,7 @@
 		<input type="submit" name ="Search" id = "Search" value = "Search">
 	</form>
 
-	<form id = "form3" action="display" >
+	<form id = "form3" class="form" action="display" >
 		<p id = "message2"><b>To display all students:</b></p>
 		
 		<input type="submit" name ="Display" id = "Display" value = "Display">
