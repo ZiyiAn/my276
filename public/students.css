@@ -3,7 +3,7 @@ div {
 	font-family: helvetica;
 	font-size: 20px;
 	position: absolute;
-	padding-top: 3px;
+	padding-top: 4px;
 	padding-left: 0px;
 	padding-right: 5px;
 	padding-bottom: 3px;
@@ -14,7 +14,7 @@ a{
 	text-decoration: none;
 }
 a:hover{
-	scale:1.2;
+	font-size:25px;
 }
 #home {
 	top:0px;
@@ -26,7 +26,7 @@ a:hover{
 
 #readme{
 	top:0px;
-	margin-left: 320px;
+	margin-left: 220px;
 
 }
 
@@ -34,7 +34,7 @@ a:hover{
 	/*position: fixed;*/
 	top:0px;
 	/*margin-top: 20px;*/
-	margin-left: 0px;*/
+	left: 0px;
 	border: 1px solid black;
 	width: 99%;
 	height: 25px;
@@ -52,7 +52,7 @@ a:hover{
 #form2{
 	padding: 20px;
 	padding-top: 10px;
-	
+
 	position: absolute;
 	margin-top: 400px;
 	margin-left: 50px;
@@ -85,4 +85,7 @@ input{
 	height: 20px;
 	width: 50px;
 }
-
+#oldname{
+	height: 18px;
+	width: 40px;
+}

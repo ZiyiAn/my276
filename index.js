@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 5000
 const { Pool } = require('pg');
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: true
+  //ssl: true
 
 });
 
@@ -112,7 +112,7 @@ express()
 	        }
 	        else {
 	          client.release();
-	          console.log("student updated")
+	          console.log("student delete")
 	          res.render('pages/succeed',{message:"Delete"})
 	        }
 	        res.end()
@@ -137,7 +137,7 @@ express()
         else {
           client.release();
           console.log("table found")
-          // console.log(result.rows)
+
           res.render('pages/display_students',{s:result})
         }
         res.end()

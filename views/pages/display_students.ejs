@@ -1,34 +1,36 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
   	<title>display_students</title>
   	<link rel="stylesheet" href = "students.css">
-  	<script src="stuDB.js"></script>
+  	<!-- <script src="stuDB.js"></script> -->
   </head>
       <body>
       <div id = "background"></div>
       <div id = "home"><a href="students.html">Home</a></div>
       <div id = "readme"><a href="readme.html">ReadMe</a></div>
 
-        <h4 style="position: absolute;margin-top: 50px;margin-left: 50px;">
-          Display Page<br>
-        </h4>
-        <div id = "background_div" style="border-style:solid;position:absolute;margin-top:100px;margin-left:50px;border-width:1px;">
-          <table style="padding: 20px;position:absolute;">
-            <% for(var row=0;row<=s.rows.length/5;row++)%>
+
+        <div id = "background_div" style="border-style:solid;margin-top:40px;margin-left:25px;border-width:1px;min-height:350px;min-width:600px;">
+          <table style="padding:20px;">
+            <% for(var row=0;row<=s.rows.length/5;row++){%>
             <tr>
-              <% for(var i=row*5;i<(row+1)*5;i++){%>
-                <td>
-                  <% var scale=0.6; var ss=s.rows[i] %>
-                  <% var div_style="width:"+ss.weight*scale+"px;height:"+ss.height*scale+"line-height:50px;margin:10px;border-width:1px;text-align:center;position:absolute;font-family:helvetica" %>
+              <% for(var i=row*5;i<(row+1)*5&&i<s.rows.length;i++){%>
+                <td style="padding-left:10px;" valign="bottom">
+
+                  <% var scale=0.65 %>
+                  <% var div_style="width:"+s.rows[i].weight*scale+"px;height:"+s.rows[i].height*scale*4+"px;padding-top:30px;position:relative;border-style:solid;border-width:1px;text-align:center;font-family:helvetica" %>
+
                   <div style= <%= div_style %>>
-                    <font color= <%=ss.haircolor %> ><%= ss.name %></font><br> <%= ss.gpa %>
+                    <font color= <%=s.rows[i].haircolor %> ><%= s.rows[i].name %></font>
+                    <br><%=s.rows[i].gpa.toFixed(1); %>
                   </div>
                 </td>
               <% } %>
             </tr>
             <% } %>
+
           </table>
         </div>
     </body>
 </html>
+<!-- line-height:40px -->
