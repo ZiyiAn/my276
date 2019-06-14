@@ -45,6 +45,7 @@ a{
 	margin-top: 50px;
 	margin-left: 50px;
 	background-color:#EEEEEE
+	border-radius: 4px;
 }
 #form2{
 	padding: 20px;
@@ -54,6 +55,7 @@ a{
 	margin-top: 400px;
 	margin-left: 50px;
 	background-color:#EEEEEE
+	border-radius: 4px;
 }
 #form3{
 	padding: 20px;
@@ -61,6 +63,7 @@ a{
 	margin-top: 570px;
 	margin-left: 50px;
 	background-color:#EEEEEE
+	border-radius: 4px;
 }
 
 .form:hover{
