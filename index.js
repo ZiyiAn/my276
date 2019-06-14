@@ -29,7 +29,6 @@ express()
   .get('/insert', async (req,res)=>{
     try{
       const client = await pool.connect()
-      // var color = req.query.haircolor?req.query.haircolor:"#000000"
       var query = "insert into student (name, gender, weight, height, haircolor, gpa) values ($1,$2,$3,$4,$5,$6)";
       var info = [req.query.name, req.query.gender, req.query.weight, req.query.height, req.query.haircolor, req.query.gpa];
       await client.query(query, info, function(err){
@@ -126,26 +125,26 @@ express()
   })
 
 
-  // .get('/delete', async (req,res)=>{
-  //   try{
-  //     const client = await pool.connect()
-  //     var query = "select * from student where name=($1)";
-  //     await client.query(query, [req.query.name_search], function(err,result){
-  //       if (err || !(result.rows[0].name)){
-  //         console.log("Query error: " + err );
-  //         res.render('pages/error',{message:(err?(""+err):"Name not match")})
-  //       }
-  //       else {
-  //         client.release();
-  //         console.log("student found")
-  //         res.render('pages/search_update',{s:result})
-  //       }
-  //       res.end()
-  //     })
-  //   } catch (err){
-  //     console.error(err);
-  //     res.render('pages/error',{message:""+err})
-  //   }
-  // })
+  .get('/display', async (req,res)=>{
+    try{
+      const client = await pool.connect()
+      var query = "select * from student where name=($1)";
+      await client.query(query, [req.query.name_search], function(err,result){
+        if (err || !(result.rows[0].name)){
+          console.log("Query error: " + err );
+          res.render('pages/error',{message:(err?(""+err):"Name not match")})
+        }
+        else {
+          client.release();
+          console.log("student found")
+          res.render('pages/search_update',{s:result})
+        }
+        res.end()
+      })
+    } catch (err){
+      console.error(err);
+      res.render('pages/error',{message:""+err})
+    }
+  })
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

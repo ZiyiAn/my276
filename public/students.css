@@ -48,16 +48,30 @@ a{
 }
 
 #form1{
+	padding: 20px;
+	/*padding-right: 119px;*/
 	position: absolute;
 	margin-top: 50px;
 	margin-left: 50px;
-	/*background-color:#B0EDEE*/
+	background-color:#D8D8D8
 }
 #form2{
+	padding: 20px;
+	padding-top: 10px;
+	
 	position: absolute;
 	margin-top: 400px;
 	margin-left: 50px;
+	background-color:#D8D8D8
 }
+#form3{
+	padding: 20px;
+	position: absolute;
+	margin-top: 570px;
+	margin-left: 50px;
+	background-color:#D8D8D8
+}
+
 input{
 	margin-top: 5px;
 	margin-bottom: 5px;
