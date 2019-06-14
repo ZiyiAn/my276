@@ -11,14 +11,13 @@
   	<!-- <div id = "database"><a href="display_students.html">Display</a></div> -->
   	<div id = "readme"><a href="public/readme.html">ReadMe</a></div>
 
-
     <% var gender=s.rows[0].gender %>
   	<form id = "form1" class="form" action="edit">
   		<p id = "message1"><b>Please fill out the student's info to update, or delete</b></p>
       Student
-      <input type="text" id="oldname" name="name_old" readonly value= <%= s.rows[0].name %> ><br>
+      <input type="text" id="oldname" name="name_old" readonly value= "<%= s.rows[0].name %>" ><br>
   		name:
-  		<input type="text" name="name" class="text" value= <%= s.rows[0].name %>><br>
+  		<input type="text" name="name" class="text" value= "<%= s.rows[0].name %>"><br>
   		gender:
   		<input type="radio" name="gender" value="M" <% if(gender=='M'){%> checked <% } %>> Male
     		<input type="radio" name="gender" value="F" <% if(gender=='F'){%> checked <% } %>> Female

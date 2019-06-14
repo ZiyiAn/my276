@@ -56,16 +56,18 @@ express()
     try{
       const client = await pool.connect()
       var query = "select * from student where name=($1)";
+      // console.log(req.query.name_search)
       await client.query(query, [req.query.name_search], function(err,result){
         if (err || !result.rows[0]){
           if(err)console.log("Query error: " + err );
-          else console.log("result returned: " + result.rows[0] + " searched name: " + req.query.name_search);
+          else console.log("result returned: " + result.rows[0] + " Searched name: " + req.query.name_search);
 
           res.render('pages/error',{message:(err?(""+err):"Name not match")})
         }
         else {
           client.release();
           console.log("student found")
+          // console.log(result.rows)
           res.render('pages/search_update',{s:result})
         }
         res.end()
@@ -137,7 +139,7 @@ express()
         else {
           client.release();
           console.log("table found")
-
+          // console.log(result.rows)
           res.render('pages/display_students',{s:result})
         }
         res.end()
