@@ -9,8 +9,16 @@
       <div id = "home"><a href="students.html">Home</a></div>
       <div id = "readme"><a href="readme.html">ReadMe</a></div>
 
+      <form id = "form4" style="padding:5px;margin-top:40px;margin-left:25px" action="search">
+        Select <select name="name_search">
+          <% for(var i=0;i<s.rows.length;i++){%>
+            <option value= <%= s.rows[i].name%>><%= s.rows[i].name%></option>
+          <% } %>
+        </select> to
+        <input type="submit" name ="Edit" id ="Edit" value = "Edit">
+      </form>
 
-        <div id = "background_div" style="border-style:solid;margin-top:40px;margin-left:25px;border-width:1px;min-height:350px;min-width:600px;">
+        <div id = "background_div" style="border-style:solid;margin-top:20px;margin-left:25px;border-width:1px;min-height:350px;min-width:600px;">
           <table style="padding:20px;">
             <% for(var row=0;row<=s.rows.length/5;row++){%>
             <tr>
