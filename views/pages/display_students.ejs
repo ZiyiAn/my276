@@ -26,7 +26,7 @@
                 <td style="padding-left:10px;" valign="bottom">
 
                   <% var scale=0.65 %>
-                  <% var div_style="width:"+s.rows[i].weight*scale+"px;height:"+s.rows[i].height*scale*4+"px;padding-top:"+ ((s.rows[i].height>25?)25:10)+"px;border-radius:"+ ((s.rows[i].gender=='F')?25:0)+"px;position:relative;border-style:solid;border-width:1px;text-align:center;font-family:helvetica" %>
+                  <% var div_style="width:"+s.rows[i].weight*scale+"px;height:"+s.rows[i].height*scale*4+"px;padding-top:"+ ((s.rows[i].height>25)?25:10)+"px;border-radius:"+ (s.rows[i].gender=='F'?25:0)+"px;position:relative;border-style:solid;border-width:1px;text-align:center;font-family:helvetica" %>
 
                   <div style= <%= div_style %>>
                     <font color= <%=s.rows[i].haircolor %> ><%= s.rows[i].name %></font>
